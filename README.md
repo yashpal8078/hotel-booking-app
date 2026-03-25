@@ -110,6 +110,27 @@ Razorpay Payment Gateway
 * Booking search via confirmation code
 
 ---
+## 📸 Application Workflow (Frontend UI)
+
+### 🏠 Home Page
+![Home](screenshots/Screenshot 2026-03-25 151643.png)
+
+### 🛏️ Room Listing
+![Rooms](screenshots/Screenshot 2026-03-25 151652.png)
+
+### 📅 Booking Page
+![Booking](screenshots/Screenshot 2026-03-25 151804.png)
+
+### 💳 Payment Page
+![Payment](screenshots/Screenshot 2026-03-25 151831.png)
+
+### ⏳ Payment Timer / Processing
+![Timer](screenshots/Screenshot 2026-03-25 151849.png)
+
+### ✅ Booking Confirmation
+![Success](screenshots/Screenshot 2026-03-25 151924.png)
+
+---
 
 ## 🚀 Installation & Setup
 
