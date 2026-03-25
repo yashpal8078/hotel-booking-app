@@ -113,22 +113,22 @@ Razorpay Payment Gateway
 ## 📸 Application Workflow (Frontend UI)
 
 ### 🏠 Home Page
-![Home](screenshots/Screenshot 2026-03-25 151643.png)
+![Home](screenshots/home.png)
 
 ### 🛏️ Room Listing
-![Rooms](screenshots/Screenshot 2026-03-25 151652.png)
+![Rooms](screenshots/room.png)
 
 ### 📅 Booking Page
-![Booking](screenshots/Screenshot 2026-03-25 151804.png)
+![Booking](screenshots/rooms.png)
 
 ### 💳 Payment Page
-![Payment](screenshots/Screenshot 2026-03-25 151831.png)
+![Payment](screenshots/payment.png)
 
-### ⏳ Payment Timer / Processing
-![Timer](screenshots/Screenshot 2026-03-25 151849.png)
+### 🪪 Login
+![Login](screenshots/login.png)
 
 ### ✅ Booking Confirmation
-![Success](screenshots/Screenshot 2026-03-25 151924.png)
+![Success](screenshots/mail.png)
 
 ---
 
