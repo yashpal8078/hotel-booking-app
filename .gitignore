@@ -1,0 +1,15 @@
+# Environment files
+.env
+frontend/.env
+backend/.env
+
+# Node (React)
+node_modules/
+build/
+
+# Java (Spring Boot)
+target/
+*.log
+
+# OS files
+.DS_Store
