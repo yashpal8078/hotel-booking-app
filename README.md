@@ -1,77 +1,202 @@
-# StaySync Hotel (React Frontend)
+# 🏨 StaySync Hotel – Full Stack Hotel Booking System
 
-StaySync Hotel is a premium, modern single-hotel booking application built with React. It provides a luxurious user experience featuring glassmorphism design, sleek dynamic animations, and an intuitive room booking flow with secure payment integration.
+StaySync Hotel is a **full-stack hotel booking application** built with a strong focus on **backend development, API design, and secure payment processing**. The system allows users to browse rooms, make bookings, complete payments, and receive automated email notifications, while admins can manage rooms and reservations efficiently.
 
-## ✨ Features
+---
 
-- **Premium UI/UX Design**: Bespoke CSS styling featuring a Royal Blue luxury palette, frosted-glass (glassmorphism) navigation, and smooth `fadeUp` entrance animations.
-- **Room Browsing & Filtering**: Easily search and view detailed information for available hotel rooms.
-- **Secure Booking Flow**: Select check-in and check-out dates using dynamic calendars and initiate seamless bookings.
-- **Razorpay Integration**: Integrated interactive secure payment gateway that auto-populates upon booking, complete with a 30-minute expiration timer to ensure booking availability.
-- **User Authentication**: JWT-based login, registration, and user profile management system.
-- **Admin Dashboard**: Comprehensive administration panel to manage rooms, monitor guest reservations, and update booking statuses.
-- **Find Your Booking**: A dedicated portal for guests to search and check the status of their upcoming reservations using a unique Confirmation Code.
+## ✨ Key Highlights
+
+* 🔹 Spring Boot Backend (Core Focus)
+* 🔹 RESTful API Architecture
+* 🔹 JWT Authentication & Authorization
+* 🔹 Razorpay Payment Integration (End-to-End)
+* 🔹 Java Mail Sender (Email Automation)
+* 🔹 Full Frontend-Backend Integration
+* 🔹 Real-world Booking Workflow Implementation
+
+---
+
+## 🧠 System Architecture
+
+React Frontend → Spring Boot REST API → Database
+↓
+Razorpay Payment Gateway
+
+---
 
 ## 🛠 Tech Stack
 
-- **Frontend Framework**: React.js (Create React App)
-- **Routing**: `react-router-dom`
-- **HTTP Client**: Axios (configured with token-based Interceptors/Headers)
-- **State Management**: React Hooks (`useState`, `useEffect`, `useMemo`)
-- **Date Picker**: `react-day-picker`
-- **Security & Encryption**: `crypto-js` (for local token/role encryption)
-- **Payment Gateway**: Razorpay Checkout SDK
+### 🔹 Backend (Main Focus 🚀)
 
-## ⚙️ Prerequisites
+* Language: Java
+* Framework: Spring Boot
+* Architecture: RESTful APIs
+* Security: JWT Authentication & Authorization
+* Database: MySQL
+* Build Tool: Maven
+* Payment Integration: Razorpay
+* Email Service: Java Mail Sender
 
-- **Node.js** (v14 or higher is recommended)
-- **npm** or **yarn**
-- A running instance of the StaySync Hotel backend API (default connection expects `http://localhost:7070/api`).
+---
+
+### 🔹 Frontend
+
+* Framework: React.js
+* Routing: react-router-dom
+* HTTP Client: Axios
+* State Management: React Hooks
+* UI Design: Glassmorphism + Modern Animations
+
+---
+
+## 🔐 Backend Features
+
+* ✅ User Authentication & Authorization
+
+  * JWT-based login & registration
+  * Role-based access (Admin / User)
+
+* ✅ Room Management APIs
+
+  * Add, update, delete rooms
+  * Fetch available rooms
+
+* ✅ Booking System APIs
+
+  * Create booking
+  * Fetch booking details
+  * Booking status management
+
+* ✅ Payment Integration (Razorpay)
+
+  * Order creation via backend
+  * Secure payment processing
+  * Payment status update
+  * Failure handling
+
+* ✅ Email Notification System (Java Mail Sender)
+
+  * Payment link sent after booking
+  * Booking confirmation email after payment
+  * Automated user communication
+
+* ✅ Secure API Design
+
+  * Token-based request validation
+  * Protected endpoints
+
+---
+
+## 💳 Payment & Email Flow
+
+1. User selects room and dates (Frontend)
+2. Frontend calls backend booking API
+3. Backend creates Razorpay order
+4. Payment link is sent to user via email
+5. Frontend opens Razorpay Checkout
+6. User completes payment
+7. Backend verifies payment
+8. Booking confirmation email is sent
+
+---
+
+## 🌐 Frontend Features
+
+* Room browsing & filtering
+* Booking flow with date selection
+* Razorpay payment UI
+* JWT-based authentication
+* Admin dashboard
+* Booking search via confirmation code
+
+---
 
 ## 🚀 Installation & Setup
 
-1. **Clone the repository** (if you haven't already):
-   ```bash
-   git clone <your-repo-link>
-   cd react-fronend
-   ```
+### 🔹 Backend (Spring Boot)
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Configure Environment / Backend**:
-   - Ensure the backend REST API is running.
-   - By default, the application is configured to connect to `http://localhost:7070/api`. If you need to change this, update the `BASE_URL` in `src/service/ApiService.js`.
-
-4. **Start the development server**:
-   ```bash
-   npm start
-   ```
-   The application will run on [http://localhost:3000](http://localhost:3000) by default.
-
-## 🗂 Project Structure
-```text
-src/
- ├── component/
- │    ├── admin/          # Admin pages (Manage Rooms, View Bookings)
- │    ├── auth/           # Login and Registration components
- │    ├── booking_rooms/  # Room listing, Date Selection, Find Booking Code portal
- │    ├── common/         # Global shared components (Navbar, Footer, Pagination)
- │    ├── home/           # Landing page with hero slider and services
- │    ├── payment/        # Razorpay Checkout page & payment status handling
- │    └── profile/        # User dashboard & edit-profile controls
- ├── service/
- │    ├── ApiService.js   # Master API hook managing Axios calls and JWT routing
- │    └── Guard.js        # Protected route handlers (Admin / Customer walls)
- ├── App.js               # Main application routing logic
- └── index.css            # Global CSS styles including animations and UI variables
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
 ```
 
-## 💳 Payment Flow Note
-The payment component integrates Razorpay to immediately launch the checkout modal securely as soon as a room is successfully reserved on the backend. The frontend handles dismissal gracefully and leverages persistent session logic (`localStorage`) to enforce a visual 30-minute confirmation threshold before declaring the booking inactive.
+Runs on:
+http://localhost:7070/api
+
+---
+
+### 🔹 Frontend (React)
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Runs on:
+http://localhost:3000
+
+---
+
+## 🔐 Environment Variables
+
+### Backend
+
+```
+RAZORPAY_KEY_ID=your_key
+RAZORPAY_SECRET=your_secret
+JWT_SECRET=your_jwt_secret
+MAIL_USERNAME=your_email
+MAIL_PASSWORD=your_email_password
+```
+
+---
+
+### Frontend
+
+```
+REACT_APP_RAZORPAY_KEY_ID=your_public_key
+```
+
+---
+
+## 🗂 Project Structure
+
+```
+hotel-booking-app/
+│
+├── frontend/        # React UI
+├── backend/         # Spring Boot APIs
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 🧠 What Makes This Project Strong
+
+* ✔ Real-world payment integration (Razorpay)
+* ✔ Complete backend-driven architecture
+* ✔ Secure JWT authentication system
+* ✔ Email automation using Java Mail Sender
+* ✔ Clean separation of frontend & backend
+* ✔ Production-like API design
+
+---
+
+## 🎯 Use Case
+
+This project simulates a real hotel booking platform demonstrating:
+
+* Authentication systems
+* Booking workflows
+* Payment processing
+* Email notifications
+* Admin operations
+
+---
 
 ## 📄 License
-This project is proprietary and built for StaySync Hotel. All rights reserved.
 
+This project is built for learning and demonstration purposes.
